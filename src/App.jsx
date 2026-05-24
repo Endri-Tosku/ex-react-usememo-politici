@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo } from 'react'
 import './App.css'
+import PoliticianCard from './components/PoliticianCard'
 
 // Componente principale dell'applicazione
 function App() {
@@ -43,19 +44,10 @@ function App() {
       {/* Visualizza i politici filtrati */}
       <div>
         {filteredPoliticians.map((politician) => (
-          <div key={politician.id}>
-            <img
-              src={politician.image}
-              alt={politician.name}
-              width="200"
-            />
-
-            <h2>{politician.name}</h2>
-
-            <h4>{politician.position}</h4>
-
-            <p>{politician.biography}</p>
-          </div>
+          <PoliticianCard
+            key={politician.id}
+            politician={politician}
+          />
         ))}
       </div>
     </div>
